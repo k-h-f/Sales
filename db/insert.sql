@@ -1,7 +1,7 @@
-drop table if exists sales;
+drop table if exists total_sales;
 drop table if exists phones; 
 
-create table sales (model_id, revenue, units);
+create table total_sales (model_id, revenue, units);
 create table phones (model_id, model_name, brand, price, country);
 
 insert into
