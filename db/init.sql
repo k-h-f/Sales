@@ -1,5 +1,3 @@
-drop table if exists phones; drop table if exists laptops
-
 insert into
   phones (model_id, model_name, brand, price, country)
 values
