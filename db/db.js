@@ -32,11 +32,11 @@ console.log(phones === sequelize.models.phones); // true
 
 await phones.sync();
 
-// const initSql = fs.readFileSync('db/init.sql').toString();
+const initSql = fs.readFileSync('db/init.sql').toString();
 
 // HOWTO run a raw query
-// const [results] = await sequelize.query(initSql);
-// console.log(results);
+const [results] = await sequelize.query(initSql);
+console.log(results);
 
 const [results_two] = await sequelize.query('SELECT * FROM phones');
 console.log(results_two);
