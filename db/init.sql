@@ -10,14 +10,3 @@ values
   (7, 'Galaxy', 'Samsung', 600, 'DE'),
   (8, 'iPhone 14', 'Apple', 599, 'GB'),
   (9, 'iPhone 14', 'Apple', 699, 'DE');
-insert into
-  laptops (id, model_name, brand, price, country)
-values
-  (1, 'Macbook Pro 14 inch', 'Apple', 1899, 'GB'),
-  (
-    2,
-    'Microsoft Surface Pro 6',
-    'Microsoft',S
-    1399,
-    'DE'
-  );
