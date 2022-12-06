@@ -9,8 +9,23 @@ const sequelize = new Sequelize('database', '', '', {
 });
 
 await sequelize.query(`
+  drop table if exists sales;
   drop table if exists phones; 
-  drop table if exists laptops`);
+  drop table if exists laptops;`);
+
+const sales = sequelize.define(
+  'sales',
+  {
+    model_id: DataTypes.INTEGER,
+    total_revenue: DataTypes.DECIMAL,
+    total_units: DataTypes.DECIMAL,
+  },
+  {
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false,
+  }
+);
 
 const phones = sequelize.define(
   'phones',
@@ -27,16 +42,10 @@ const phones = sequelize.define(
     updatedAt: false,
   }
 );
-
-console.log(phones === sequelize.models.phones); // true
-
 await phones.sync();
+await sales.sync();
 
-const initSql = fs.readFileSync('db/init.sql').toString();
+const initSql = fs.readFileSync('db/insert.sql').toString();
 
 // HOWTO run a raw query
-const [results] = await sequelize.query(initSql);
-console.log(results);
-
-const [results_two] = await sequelize.query('SELECT * FROM phones');
-console.log(results_two);
+await sequelize.query(initSql);
