@@ -9,12 +9,11 @@ const sequelize = new Sequelize('database', '', '', {
 });
 
 await sequelize.query(`
-  drop table if exists sales;
-  drop table if exists phones; 
-  drop table if exists laptops;`);
+  drop table if exists total_sales;
+  drop table if exists phones;`);
 
 const sales = sequelize.define(
-  'sales',
+  'total_sales',
   {
     model_id: DataTypes.INTEGER,
     total_revenue: DataTypes.DECIMAL,

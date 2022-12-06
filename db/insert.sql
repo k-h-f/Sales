@@ -1,12 +1,18 @@
+drop table if exists sales;
+drop table if exists phones; 
+
+create table sales (model_id, revenue, units);
+create table phones (model_id, model_name, brand, price, country);
+
 insert into
-  sales (model_id, total_revenue, total_units)
+  total_sales (model_id, total_revenue, total_units)
 values
-  (94, 72000, 168),
-  (27, 444795, 946),
-  (100, 90449, 893),
-  (45, 81570, 537),
-  (66, 151121, 48);
-  
+  (94, 72000.12, 168),
+  (27, 444795.32, 946),
+  (100, 90449.76, 893),
+  (45, 81570.34, 537),
+  (66, 151121.98, 48);
+
 insert into
   phones (model_id, model_name, brand, price, country)
 values
@@ -19,3 +25,9 @@ values
   (45, 'Galaxy', 'Samsung', 600, 'DE'),
   (66, 'iPhone 14', 'Apple', 599, 'GB'),
   (66, 'iPhone 14', 'Apple', 699, 'DE');
+  
+-- Write a query that aggregates all sales of smartphones in GB
+-- Extend this query to involve all smartphones that are only iPhone 14
+-- Extend this query to include the total revenue of iPhone 14 (hint, use the sales table)
+-- Extend this query to include the total revenue of everything
+-- Extend this query to calculate the percentage between the total sales and the total sales for iPhone 14
