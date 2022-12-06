@@ -1,5 +1,4 @@
-drop table if exists products
-create table products (
+create table if not exists products (
     id integer,
     model_name varchar(100),
     brand varchar(100),
@@ -18,7 +17,7 @@ values
     (6, 'iPhone 14', 'Apple', 499 , 'GB'),
     (7, 'Galaxy', 'Samsung', 600, 'DE'),
     (8, 'iPhone 14', 'Apple', 599, 'GB'),
-    (9, 'iPhone 14', 'Apple', 699, 'DE'),
+    (9, 'iPhone 14', 'Apple', 699, 'DE');
 
 create table laptops (
     id integer,
@@ -32,4 +31,4 @@ insert into
     laptops (id, model_name, brand, price, country)
 values
     (1, 'Macbook Pro 14 inch', 'Apple', 1899, 'GB'),
-    (2, 'Microsoft Surface Pro 6', 'Microsoft', 1399, 'DE'),
+    (2, 'Microsoft Surface Pro 6', 'Microsoft', 1399, 'DE');
