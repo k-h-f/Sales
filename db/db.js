@@ -8,10 +8,6 @@ const sequelize = new Sequelize('database', '', '', {
   logging: false,
 });
 
-await sequelize.query(
-  'drop table if exists phones; drop table if exists laptops'
-);
-
 const phones = sequelize.define(
   'phones',
   {
