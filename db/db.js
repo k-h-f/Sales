@@ -16,8 +16,8 @@ const sales = sequelize.define(
   'total_sales',
   {
     model_id: DataTypes.INTEGER,
-    total_revenue: DataTypes.DECIMAL,
-    total_units: DataTypes.DECIMAL,
+    revenue: DataTypes.DECIMAL,
+    units: DataTypes.DECIMAL,
   },
   {
     timestamps: false,
