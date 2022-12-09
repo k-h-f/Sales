@@ -4,7 +4,7 @@ import fs from 'fs';
 // setup a new database
 export const sequelize = new Sequelize('database', '', '', {
   dialect: 'sqlite',
-  storage: 'data/database.sqlite',
+  storage: 'database.sqlite',
   logging: false,
 });
 
