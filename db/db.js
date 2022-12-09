@@ -49,5 +49,3 @@ const initSql = fs.readFileSync('db/insert.sql').toString();
 
 // HOWTO run a raw query
 await sequelize.query(initSql);
-const [result] = await sequelize.query('select * from total_sales');
-console.log(result);
