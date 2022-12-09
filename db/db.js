@@ -34,6 +34,7 @@ const phones = sequelize.define(
     brand: DataTypes.STRING,
     price: DataTypes.DECIMAL,
     country: DataTypes.STRING,
+    period: DataTypes.INTEGER,
   },
   {
     timestamps: false,
