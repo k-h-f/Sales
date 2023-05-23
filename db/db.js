@@ -45,7 +45,11 @@ const phones = sequelize.define(
 await phones.sync();
 await sales.sync();
 
-const initSql = fs.readFileSync('db/insert.sql').toString();
+const insertPhonesSql = fs.readFileSync('db/insert_phones.sql').toString();
+const insertTotalSalesSql = fs
+  .readFileSync('db/insert_total_sales.sql')
+  .toString();
 
 // HOWTO run a raw query
-await sequelize.query(initSql);
+await sequelize.query(insertPhonesSql);
+await sequelize.query(insertTotalSalesSql);
